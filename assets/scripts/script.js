@@ -71,7 +71,7 @@ function SearchUsers (name, age) {
           )
         )
       } else {
-        reject([])
+        error([])
       }
     }, 2000)
   })
