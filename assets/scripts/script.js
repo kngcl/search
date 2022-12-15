@@ -60,7 +60,7 @@ function shouldResolve () {
 }
 
 function SearchUsers (name, age) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, error) => {
     setTimeout(() => {
       if (shouldResolve()) {
         resolve(
