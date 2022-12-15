@@ -1,4 +1,4 @@
-let user = [
+const user = [
   { name: 'Carles Evance', age: 20 },
   { name: 'Lance Noubissi', age: 25 },
   { name: 'Flore Beyina', age: 22 },
@@ -19,13 +19,13 @@ let user = [
   { name: 'Diz', age: 10 },
   { name: 'Crats', age: 27 },
   { name: 'Vincent', age: 10 },
-  { name: 'Elizbeth', age: 20 },
+  { name: 'Elizbeth', age: 20 }
 ]
 
 const content = document.querySelector('form')
 const pers = document.querySelector('.actors')
 
-function getInitials(name) {
+function getInitials (name) {
   return name
     .split(' ')
     .map((n) => n[0])
@@ -33,7 +33,7 @@ function getInitials(name) {
     .join('.')
 }
 
-function displayUser({ name, age }) {
+function displayUser ({ name, age }) {
   return `
   <div class='actors actors2'>
   <h4><i class='abbrevations'>${getInitials(name)}</i> <div class = 'same'>
@@ -45,21 +45,21 @@ function displayUser({ name, age }) {
 </ul>`
 }
 
-function displayUsers(persons) {
+function displayUsers (persons) {
   return persons.length
     ? persons.map(displayUser).join('')
     : renderMessage('Sorry! No User Found')
 }
 
-function compareNames(name, searchTerm) {
+function compareNames (name, searchTerm) {
   return name.toLowerCase().includes(searchTerm.toLowerCase())
 }
 
-function shouldResolve() {
+function shouldResolve () {
   return Math.random() < 0.85
 }
 
-function SearchUsers(name, age) {
+function SearchUsers (name, age) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve()) {
@@ -77,7 +77,7 @@ function SearchUsers(name, age) {
   })
 }
 
-function renderMessage() {
+function renderMessage () {
   return `<div class='center'>
   <div class='wave'></div>
   <div class='wave'></div>
